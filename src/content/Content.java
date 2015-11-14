@@ -1,7 +1,15 @@
 package content;
 
-public abstract class Content {
+public class Content<T> {
 
-	public abstract int getContent();
+	protected T message;
+	
+	public Content(T message) {
+		this.message = message;
+	}
+	
+	public T getContent() {
+		return this.message;
+	}
 	
 }

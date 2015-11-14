@@ -1,9 +1,11 @@
 package letter;
 
+import content.Content;
+
 public class PromissoryLetter extends Letter {
 
 	public PromissoryLetter(){
-		// TO COMPLETE
+		this.content = new Content<Integer>(20); 
 	}
 	
 	@Override
