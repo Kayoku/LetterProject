@@ -10,4 +10,8 @@ public class Inhabitant {
 		this.bankAccount = new BankAccount(amount);
 	}
 	
+	public BankAccount getBankAccount() {
+		return this.bankAccount;
+	}
+	
 }

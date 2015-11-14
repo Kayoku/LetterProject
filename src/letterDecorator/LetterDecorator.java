@@ -3,8 +3,8 @@ package letterDecorator;
 import letter.ConcreteLetter;
 import letter.Letter;
 
-public abstract class LetterDecorator extends Letter {
+public abstract class LetterDecorator<T extends ConcreteLetter> extends Letter {
 
-	protected ConcreteLetter letter;
+	protected T letter;
 	
 }

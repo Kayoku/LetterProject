@@ -1,6 +1,6 @@
 package letterDecorator;
 
-public class RegistredLetter extends LetterDecorator {
+public class RegistredLetter extends LetterDecorator{
 
 	public RegistredLetter() {
 		// TO COMPLETE
