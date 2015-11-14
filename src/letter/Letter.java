@@ -27,4 +27,8 @@ public abstract class Letter {
 	public Inhabitant getReceiver() {
 		return this.receiver;
 	}
+	
+	public Content<?> getContent() {
+		return this.content;
+	}
 }
