@@ -1,5 +1,7 @@
 package content;
 
-public interface Content {
+public abstract class Content {
 
+	public abstract int getContent();
+	
 }

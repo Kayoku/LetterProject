@@ -1,9 +1,10 @@
 package letterDecorator;
 
+import letter.ConcreteLetter;
 import letter.Letter;
 
 public abstract class LetterDecorator extends Letter {
 
-	protected Letter letter;
+	protected ConcreteLetter letter;
 	
 }
