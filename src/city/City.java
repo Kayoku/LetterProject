@@ -11,10 +11,10 @@ public class City {
 	protected List<Inhabitant> inhabitants;
 	protected List<Letter> postbox;
 	
-	public City(String name, List<Inhabitant> inhabitants) {
+	public City(String name) {
 		this.name = name;
-		this.inhabitants = inhabitants;
 		this.postbox = new ArrayList<Letter>();
+		this.inhabitants = new ArrayList<Inhabitant>();
 	}
 	
 	public void sendLetter(Letter letter) {
@@ -47,5 +47,9 @@ public class City {
 			
 			letter.doAction();
 		}
+	}
+	
+	public void addInhabitant(Inhabitant inhabitant){
+		this.inhabitants.add(inhabitant);
 	}
 }
