@@ -18,10 +18,34 @@ public class City {
 	}
 	
 	public void sendLetter(Letter letter) {
+		// Add the letter in the box
 		this.postbox.add(letter);
+
+		// Display the send
+		System.out.print("-> " + letter.getSender().getName() + " mails ");
+		letter.toString();
+		System.out.println(" to " + letter.getReceiver().getName() + " for a cost of " + letter.cost());
+	
+		// Debit the count of the letter
+		letter.getSender().getBankAccount().debit(letter.cost());
+	
 	}
 	
 	public void distributeLetter() {
-		// TO COMPLETE
+		
+		int i;
+		Letter letter;
+		
+		// For each letters
+		for(i = 0 ; i < this.postbox.size() ; i++){
+			letter = this.postbox.get(i);
+			
+			// Display the receive
+			System.out.print("<- " + letter.getReceiver().getName() + " receives ");
+			letter.toString();
+			System.out.println(" from " + letter.getSender().getName());
+			
+			letter.doAction();
+		}
 	}
 }

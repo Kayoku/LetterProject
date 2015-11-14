@@ -8,7 +8,18 @@ public class RegistredLetter extends LetterDecorator{
 	
 	@Override
 	public void doAction() {
-		// TO COMPLETE
+
+
+	}
+
+	@Override
+	public int cost() {
+		return this.letter.cost() + 15;
+	}
+
+	@Override
+	public String toString() {
+		return "a registered letter whose content is a " + this.letter.toString();
 	}
 
 	
