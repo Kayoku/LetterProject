@@ -1,15 +1,18 @@
 package letterDecorator;
 
+import letter.Letter;
+import letter.SimpleLetter;
+
 public class RegistredLetter extends LetterDecorator{
 
-	public RegistredLetter() {
-		// TO COMPLETE
+	public RegistredLetter(Letter letter) {
+		super(letter.getSender(), letter.getReceiver());
+		this.letter = letter;
 	}
 	
 	@Override
 	public void doAction() {
-
-
+		this.getReceiver().getCity().sendLetter(new SimpleLetter("Aknowledgment of receipt", this.getReceiver(), this.getSender()));
 	}
 
 	@Override
