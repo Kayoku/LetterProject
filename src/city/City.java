@@ -48,6 +48,8 @@ public class City {
 			
 			letter.doAction();
 		}
+		
+		this.postbox.clear();
 	}
 	
 	public void addInhabitant(Inhabitant inhabitant){

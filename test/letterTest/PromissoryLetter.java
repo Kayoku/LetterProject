@@ -16,7 +16,7 @@ public class PromissoryLetter extends AcknowledgmentLetterTest {
 
 	@Before
 	public void setUp() throws Exception {
-		letter = new PromissoryLetter(100, sender, receiver);
+		//letter = new PromissoryLetter(100, sender, receiver);
 	}
 
 	@Override

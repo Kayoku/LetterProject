@@ -42,7 +42,7 @@ public class Main {
 			inhabitants = randomInhabitants(superCity.getInhabitants());
 
 			// Generation of the send of letters
-			for(int j = 0 ; j < inhabitants.size()/2 ; j++){
+			for(int j = 0 ; j < inhabitants.size()/4 ; j++){
 				superCity.sendLetter(randomLetter(inhabitants.get(j), inhabitants.get(j+6)));
 			}
 		}
