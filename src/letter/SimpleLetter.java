@@ -15,7 +15,7 @@ public class SimpleLetter extends Letter {
 
 	@Override
 	public int cost() {
-		return 1;
+		return 3;
 	}
 
 	@Override

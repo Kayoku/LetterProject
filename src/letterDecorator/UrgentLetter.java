@@ -10,7 +10,9 @@ public class UrgentLetter extends LetterDecorator {
 	}
 	
 	@Override
-	public void doAction() {}
+	public void doAction() {
+		this.letter.doAction();
+	}
 
 	@Override
 	public int cost() {

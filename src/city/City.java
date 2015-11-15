@@ -23,7 +23,7 @@ public class City {
 
 		// Display the send
 		System.out.print("-> " + letter.getSender().getName() + " mails ");
-		letter.toString();
+		System.out.print(letter.toString());
 		System.out.println(" to " + letter.getReceiver().getName() + " for a cost of " + letter.cost());
 	
 		// Debit the count of the letter
@@ -42,7 +42,7 @@ public class City {
 			
 			// Display the receive
 			System.out.print("<- " + letter.getReceiver().getName() + " receives ");
-			letter.toString();
+			System.out.print(letter.toString());
 			System.out.println(" from " + letter.getSender().getName());
 			
 			letter.doAction();
@@ -51,5 +51,9 @@ public class City {
 	
 	public void addInhabitant(Inhabitant inhabitant){
 		this.inhabitants.add(inhabitant);
+	}
+	
+	public List<Inhabitant> getInhabitants() {
+		return this.inhabitants;
 	}
 }

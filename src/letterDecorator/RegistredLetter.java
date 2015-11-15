@@ -12,6 +12,7 @@ public class RegistredLetter extends LetterDecorator{
 	
 	@Override
 	public void doAction() {
+		this.letter.doAction();
 		this.getReceiver().getCity().sendLetter(new SimpleLetter("Aknowledgment of receipt", this.getReceiver(), this.getSender()));
 	}
 
@@ -22,7 +23,7 @@ public class RegistredLetter extends LetterDecorator{
 
 	@Override
 	public String toString() {
-		return "a registered letter whose content is a " + this.letter.toString();
+		return "a registered letter whose content is " + this.letter.toString();
 	}
 
 	
