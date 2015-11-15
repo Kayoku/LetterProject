@@ -17,6 +17,7 @@ public class City {
 		this.inhabitants = new ArrayList<Inhabitant>();
 	}
 	
+
 	public void sendLetter(Letter letter) {
 		// Add the letter in the box
 		this.postbox.add(letter);
