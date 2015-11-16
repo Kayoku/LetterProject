@@ -1,4 +1,4 @@
-package letterTest;
+package mockedClass;
 
 import java.util.Hashtable;
 
@@ -30,6 +30,13 @@ public class MockedCity extends City {
 			LetterReceived.put(receiver, numberOfLetterReceive(receiver) + 1);		
 		}
 		super.distributeLetter();
+	}
+	
+	public boolean isInPostBox(Letter letter){
+		return postbox.contains(letter);
+	}
+	public boolean isInCity(Inhabitant inhabitant){
+		return inhabitants.contains(inhabitant);
 	}
 	
 	public int numberOfLetterSend(Inhabitant sender){

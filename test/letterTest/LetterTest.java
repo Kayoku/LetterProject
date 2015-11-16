@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import city.Inhabitant;
 import letter.Letter;
+import mockedClass.MockedCity;
 
 public abstract class LetterTest {
 
