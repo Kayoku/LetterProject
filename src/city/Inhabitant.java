@@ -24,4 +24,8 @@ public class Inhabitant {
 		return this.city;
 	}
 	
+	public String toString(){
+		return name;
+	}
+	
 }

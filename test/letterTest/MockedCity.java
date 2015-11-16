@@ -19,24 +19,33 @@ public class MockedCity extends City {
 
 	public void sendLetter(Letter letter) {
 		super.sendLetter(letter);
-		LetterSend.put(letter.getSender(), LetterSend.get(letter.getSender()) + 1);
+		Inhabitant sender = letter.getSender();
+		
+		LetterSend.put(sender, numberOfLetterSend(sender) + 1);
 	}
 	
 	public void distributeLetter(){
 		for(Letter letter: postbox){
 			Inhabitant receiver = letter.getReceiver();
-			LetterReceived.put(receiver, LetterReceived.get(letter) + 1);
+			LetterReceived.put(receiver, numberOfLetterReceive(receiver) + 1);		
 		}
-		
 		super.distributeLetter();
 	}
 	
 	public int numberOfLetterSend(Inhabitant sender){
-		return (LetterSend.get(sender)).intValue();
+		Integer N = LetterSend.get(sender);
+		if(N == null)
+			return 0;
+		else
+			return N.intValue();
 	}
 	
 	public int numberOfLetterReceive(Inhabitant receiver){
-		return (LetterReceived.get(receiver)).intValue();
+		Integer N = LetterReceived.get(receiver);
+		if(N == null)
+			return 0;
+		else
+			return N.intValue();
 	}
 	
 }

@@ -8,13 +8,12 @@ public abstract class AcknowledgmentLetterTest extends LetterTest {
 
 	@Test
 	public void AcknowledgmentTest() {
-		int numberOfLetterSend = city.numberOfLetterSend(sender);
-		int numberOfLetterReceive = city.numberOfLetterReceive(receiver);
+		int numberOfLetterSend = city.numberOfLetterSend(receiver);
+		int numberOfLetterReceive = city.numberOfLetterReceive(sender);
 		letter.doAction();
-		
-		assertEquals(numberOfLetterSend + 1, city.numberOfLetterSend(sender));
+		assertEquals(numberOfLetterSend + 1, city.numberOfLetterSend(receiver));
 		city.distributeLetter();
-		assertEquals(numberOfLetterReceive + 1, city.numberOfLetterReceive(receiver));
+		assertEquals(numberOfLetterReceive + 1, city.numberOfLetterReceive(sender));
 	}
 
 }

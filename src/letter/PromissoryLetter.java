@@ -12,7 +12,7 @@ public class PromissoryLetter extends Letter {
 	
 	@Override
 	public void doAction() {
-		int amount = (int)this.content.getContent();
+		int amount = ((Integer)this.content.getContent()).intValue();
 		this.sender.getBankAccount().debit(amount);
 		
 		this.receiver.getBankAccount().credit(amount);
@@ -22,7 +22,7 @@ public class PromissoryLetter extends Letter {
 
 	@Override
 	public int cost() {
-		return 1 + (1/100) * (int)this.content.getContent();
+		return 1 + ((Integer)this.content.getContent()).intValue() / 100;
 	}
 
 	public String toString(){

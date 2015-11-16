@@ -5,7 +5,6 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import city.City;
 import city.Inhabitant;
 import letter.Letter;
 
@@ -37,7 +36,8 @@ public abstract class LetterTest {
 
 	protected abstract int computeCost();
 	
-	@Test void costTest(){
+	@Test 
+	public void costTest(){
 		assertEquals(letter.cost(), computeCost());
 	}
 }
