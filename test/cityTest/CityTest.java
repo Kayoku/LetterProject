@@ -1,7 +1,11 @@
 package cityTest;
 
 import static org.junit.Assert.*;
+import letter.Letter;
 import letter.SimpleLetter;
+import letterDecorator.RegistredLetter;
+import letterDecorator.UrgentLetter;
+import letterTest.RegisteredLetterTest;
 import mockedClass.MockedCity;
 
 import org.junit.Before;
@@ -63,6 +67,29 @@ public class CityTest {
 		assertEquals(numberOfLetterReceive + 1, city.numberOfLetterReceive(receiver));
 	}
 
+	@Test
+	public void distributeLetterWithAcknowledgment(){
+		
+		int numberOfLetterReceive = city.numberOfLetterReceive(sender);
+		
+		//envoyer une lettre avec accusé de reception
+		Letter letter = new SimpleLetter("content", sender, receiver);
+		letter = new RegistredLetter(letter);
+		city.sendLetter(letter);
+		
+		//distribuer le courier
+		city.distributeLetter();
+		
+		//verifier que le sender n'a pas reçus une lettre suplementaire
+		assertEquals(numberOfLetterReceive , city.numberOfLetterReceive(sender));
+		
+		//Redistribuer le courier
+		city.distributeLetter();
+		
+		//verifier que le sender à reçus une lettre suplementaire
+		assertEquals(numberOfLetterReceive + 1, city.numberOfLetterReceive(sender));
+	}
+	
 	@Test
 	public void addInhabitantTest(){
 		city.addInhabitant(sender);

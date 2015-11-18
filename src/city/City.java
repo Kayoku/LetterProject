@@ -37,9 +37,12 @@ public class City {
 		int i;
 		Letter letter;
 		
+		ArrayList<Letter> postBoxOld = new ArrayList<>(this.postbox);
+		this.postbox.removeAll(postBoxOld);
+		
 		// For each letters
-		for(i = 0 ; i < this.postbox.size() ; i++){
-			letter = this.postbox.get(i);
+		for(i = 0 ; i < postBoxOld.size() ; i++){
+			letter = postBoxOld.get(i);
 			
 			// Display the receive
 			System.out.print("<- " + letter.getReceiver().getName() + " receives ");
@@ -47,9 +50,9 @@ public class City {
 			System.out.println(" from " + letter.getSender().getName());
 			
 			letter.doAction();
+			
 		}
 		
-		this.postbox.clear();
 	}
 	
 	public void addInhabitant(Inhabitant inhabitant){
